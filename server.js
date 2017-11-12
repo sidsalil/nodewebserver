@@ -93,6 +93,13 @@ app.get('/bad', (request, response) => {
   })
 });
 
+app.get('/myprojects', (request, response) => {
+  response.render('myProjectsTemplate.hbs', {
+    pageTitle: 'My Projects Page',
+    welcomeMessage: 'Welcome to my projects page for Node.JS!!! :)'
+  });
+});
+
 app.listen(herokuPort, () =>  {
   console.log(`Server is up on port ${herokuPort}`);
 });
