@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const herokuPort = process.env.PORT || 3000;
 var app = express();
 
 //homePageTemplate.hbs and aboutTemplate.hbs have the same footer info.
@@ -92,6 +93,6 @@ app.get('/bad', (request, response) => {
   })
 });
 
-app.listen(3000, () =>  {
-  console.log('Server is up on port 3000');
+app.listen(herokuPort, () =>  {
+  console.log(`Server is up on port ${herokuPort}`);
 });
